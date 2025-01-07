@@ -32,9 +32,17 @@ Web URL  ：http://qsy.pxxox.cn
 
 # 在web网页中实现短视频去水印网页
 
-代码修改：
+聚合短视频去水印网页代码说明
 
-	<!DOCTYPE html><!DOCTYPE html>
+一、代码概述
+
+这是一个用于实现聚合短视频去水印功能的网页代码，通过前端界面与后端脚本的交互，帮助用户去除常见短视频平台视频中的水印，并提供下载去水印视频的功能。
+
+二、代码详情
+以下是将上述HTML代码内容整理到github.md文档中的示例（你可以根据实际需求进一步完善文档说明等内容）：
+
+聚合短视频去水印代码展示
+<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
@@ -44,7 +52,8 @@ Web URL  ：http://qsy.pxxox.cn
     <style>
     /* 原始css样式 */
     </style>
-    </head>
+</head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -70,7 +79,7 @@ Web URL  ：http://qsy.pxxox.cn
     <script>
         function downloadVideo() {
             var link = document.getElementById('videoLink').value;
-            
+
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'dump.php?action=download&url=' + link, true);
             xhr.responseType = 'blob';
@@ -90,7 +99,7 @@ Web URL  ：http://qsy.pxxox.cn
 
         function removeWatermark() {
             var link = document.getElementById('videoLink').value;
-            
+
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'dump.php?action=remove_watermark&url=' + link, true);
             xhr.onreadystatechange = function () {
@@ -104,6 +113,60 @@ Web URL  ：http://qsy.pxxox.cn
 </body>
 
 </html>
+
+（一）HTML 结构
+
+1. <head> 部分
+
+• 设置了页面的字符编码为 UTF-8，确保能正确显示各种字符。
+
+• 定义了视口的属性，使页面能在不同设备上自适应显示，并禁止用户手动缩放页面。
+
+• 给出了页面的标题为“聚合短视频去水印”。
+
+2. <body> 部分
+
+• container 类的 <div> 作为整个页面内容的容器，对内部元素进行布局和样式控制。
+
+• header 类的 <div> 包含页面的标题和一个“查看详细教程”的按钮，按钮通过 onclick 事件在新窗口打开对应的教程页面，方便用户获取更多使用信息。
+
+• notification 类的 <div> 用于向用户展示重要提示，提醒用户输入合法的视频链接，因为去水印功能依赖于后端接口调用，非法链接可能导致操作失败。
+
+• support 类的 <div> 列举了该工具支持的众多短视频平台，增强了工具的实用性展示，同时有一个“常见问题”的链接（目前 href 为空，可根据实际情况补充完善），方便用户在遇到问题时快速查找解决方案。
+
+• textarea-container 类的 <div> 包裹着一个 <textarea> 文本框，用户在此粘贴需要去水印的短视频链接。文本框的 placeholder 属性给出了明确的提示信息，引导用户操作。
+
+• buttons 类的 <div> 包含两个按钮，“下载视频”和“免费去水印”。这两个按钮分别绑定了 downloadVideo() 和 removeWatermark() JavaScript 函数，用于触发对应的操作。
+
+• id 为 result 的 <div> 用于展示去水印操作后的结果信息，例如去水印成功的提示、失败的原因或者去水印后的视频链接等。
+
+（二）JavaScript 函数
+
+1. downloadVideo() 函数
+
+• 首先获取用户在文本框中输入的视频链接，通过 XMLHttpRequest 对象向 dump.php 发送一个 GET 请求，请求参数 action=download 和用户输入的视频链接。
+
+• 设置 responseType 为 blob，以便接收二进制数据，适用于处理视频文件这种二进制流数据。
+
+• 在 onreadystatechange 事件回调中，当 readyState 为 4（表示请求已完成）且 status 为 200（表示请求成功）时，将响应数据转换为 Blob 对象，并利用 URL.createObjectURL() 方法创建一个临时的 URL，用于生成一个可下载的链接。
+
+• 通过创建一个 <a> 标签，设置其 href 为临时 URL，download 属性为“去水印视频.mp4”，模拟点击该标签实现视频的下载操作，最后使用 URL.revokeObjectURL() 方法释放临时 URL 资源，避免内存泄漏。
+
+2. removeWatermark() 函数
+
+• 同样先获取用户输入的视频链接，然后向 dump.php 发送一个 action=remove_watermark 的 GET 请求。
+
+• 在请求成功（readyState 为 4 且 status 为 200）时，将后端返回的响应文本设置为 id 为 result 的 <div> 的 innerHTML，从而在页面上展示去水印的结果信息，让用户知晓操作的反馈情况。
+
+三、使用说明
+
+1. 后端配合：需要有一个名为 dump.php 的后端脚本文件，该文件应部署在与该 HTML 文件相同的服务器环境下，并根据前端发送的 action 参数（download 或 remove_watermark）以及视频链接进行相应的处理。例如，在 download 操作中，后端可能需要从原始视频源获取视频数据，并进行去水印处理（如果尚未去水印）后，将处理后的视频数据返回给前端供用户下载；在 remove_watermark 操作中，后端执行去水印逻辑，并返回去水印的结果信息，如成功与否的提示以及可能的去水印后视频链接等。
+
+2. 样式定制：目前 <style> 标签内没有具体样式设置，可以根据设计需求添加 CSS 样式规则，对页面的字体、颜色、布局、按钮样式、文本框样式、提示信息样式等进行美化和定制，以提升用户体验和页面的美观度，使其与整体网站风格相匹配或者符合特定的设计要求。
+
+3. 功能测试与优化：在部署到实际环境前，应进行充分的功能测试。在不同的浏览器（如 Chrome、Firefox、Safari、Edge 等）上访问该网页，尝试输入各种合法和非法的短视频链接，点击“下载视频”和“免费去水印”按钮，检查是否能正确执行相应操作并获得预期结果。同时，使用浏览器的开发者工具（如 Chrome 的 DevTools）监控网络请求、查看控制台输出的错误信息等，以便及时发现和解决可能出现的问题，如接口调用失败、数据传输错误、前端与后端交互异常等，并对代码进行相应的优化和改进，确保工具的稳定性和可靠性。
+
+请注意，在使用和开发此类短视频去水印工具时，要确保符合法律法规和相关平台的使用条款，避免侵犯他人的知识产权和版权。同时，由于短视频平台的技术和规则可能会不断更新变化，可能需要持续对代码进行维护和更新，以保证去水印功能的有效性和稳定性。
 
  将get_header(); // 加载 WordPress 的页头 <?php get_footer(); // 加载 WordPress 的页脚 ?> 代码删除
 
