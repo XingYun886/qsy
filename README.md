@@ -38,22 +38,7 @@ JavaScript部分
 
 • 代码详情：
 
-（```html
-<html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>聚合短视频去水印</title>
-    <style>
-	/* 原始css样式 */
-    </style>
-    </head>
-<body>
-	/* 原始代码 */
-</body>
-
-</html>```）
+![美丽风景](https://s2.loli.net/2025/01/08/Q3sTfN8EFKWCSzB.jpg)
 
 • HTML结构
 
