@@ -45,11 +45,12 @@ JavaScript部分
 &lt;html&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"&gt;
     &lt;title&gt;聚合短视频去水印&lt;/title&gt;
     &lt;style&gt;原始css样式&lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;原始部分&gt;
+原始部分
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
