@@ -4,7 +4,7 @@
 
 [WordPress页面](https://www.pxxox.com/qsy)
 
-[WEB网页页面](https://qsy.pxxox.cn/)
+[WEB网页页面](http://qsy.pxxox.cn/)
 
 ## 项目简介
 
