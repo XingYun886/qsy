@@ -40,7 +40,7 @@ JavaScript部分
 
 ![html部分](https://s2.loli.net/2025/01/08/Q3sTfN8EFKWCSzB.jpg)
 
-<!DOCTYPE html>
+(```<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -49,7 +49,7 @@ JavaScript部分
     <body>
        原始部分 
     </body>
-    </html>
+    </html>)
 
 • HTML结构
 
