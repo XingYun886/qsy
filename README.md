@@ -40,9 +40,16 @@ JavaScript部分
 
 ![html部分](https://s2.loli.net/2025/01/08/Q3sTfN8EFKWCSzB.jpg)
 
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>聚合短视频去水印</title>
+    <body>
+       原始部分 
+    </body>
+    </html>
 
 • HTML结构
 
