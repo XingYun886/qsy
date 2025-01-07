@@ -30,7 +30,90 @@ Web URL  ：http://qsy.pxxox.cn
 
 • 定义了两个主要函数 downloadVideo() 和 removeWatermark()，分别用于处理视频下载和去水印的请求。在函数内部，通过 XMLHttpRequest 对象与后端的 qsy1.php 脚本进行通信，发送视频链接并接收处理结果，然后根据结果进行相应的页面操作，如创建下载链接或显示去水印结
 
+# 在web网页中实现短视频去水印网页
 
+环境准备：
+
+	○	搭建一个支持 PHP 的 Web 服务器环境，如 Apache 或 Nginx，并确保 PHP 版本符合代码要求（通常为较新版本以支持各种函数和特性）。
+
+	○	配置服务器以正确解析 PHP 文件，确保 .php 扩展名的文件能够被服务器执行，而不是直接以文本形式返回给浏览器。
+
+ 将get_header(); // 加载 WordPress 的页头 <?php get_footer(); // 加载 WordPress 的页脚 ?> 代码删除
+
+前端部分代码
+
+ <!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>聚合短视频去水印</title>
+    <style>
+    /* 原始css样式 */
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>聚合短视频去水印</h1>
+            <button class="detail-button" onclick="window.open('http://qsy.pxxox.cn/user.html', '_blank')">查看详细教程</button>
+        </div>
+        <div class="notification">
+            <span>🔊 本工具通过调用接口实现去水印功能，请确保输入合法链接哦。</span>
+        </div>
+        <div class="support">
+            支持平台：某音、某手、某书、某瓜等100多个平台
+            <a href="#" class="qa-link">常见问题</a>
+        </div>
+        <div class="textarea-container">
+            <textarea placeholder="请复制平台上的短视频链接到此文本框" id="videoLink"></textarea>
+        </div>
+        <div class="buttons">
+            <button class="paste-btn" onclick="downloadVideo()">下载视频</button>
+            <button class="remove-watermark-btn" onclick="removeWatermark()">免费去水印</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script>
+        function downloadVideo() {
+            var link = document.getElementById('videoLink').value;
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'dump.php?action=download&url=' + link, true);
+            xhr.responseType = 'blob';
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var blob = new Blob([xhr.response], {type: 'video/mp4'});
+                    var url = window.URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = '去水印视频.mp4';
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                }
+            };
+            xhr.send();
+        }
+
+        function removeWatermark() {
+            var link = document.getElementById('videoLink').value;
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'dump.php?action=remove_watermark&url=' + link, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('result').innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
+
+按照教程顺序即可在web网页中实现而不是在 WordPress 中实现短视频去水印页面
 
 # 在 WordPress 中实现短视频去水印页面
 
