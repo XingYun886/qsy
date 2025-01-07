@@ -32,17 +32,9 @@ Web URL  ：http://qsy.pxxox.cn
 
 # 在web网页中实现短视频去水印网页
 
-环境准备：
+代码修改：
 
-	○	搭建一个支持 PHP 的 Web 服务器环境，如 Apache 或 Nginx，并确保 PHP 版本符合代码要求（通常为较新版本以支持各种函数和特性）。
-
-	○	配置服务器以正确解析 PHP 文件，确保 .php 扩展名的文件能够被服务器执行，而不是直接以文本形式返回给浏览器。
-
- 将get_header(); // 加载 WordPress 的页头 <?php get_footer(); // 加载 WordPress 的页脚 ?> 代码删除
-
-前端部分代码
-
- <!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
@@ -112,6 +104,8 @@ Web URL  ：http://qsy.pxxox.cn
 </body>
 
 </html>
+
+ 将get_header(); // 加载 WordPress 的页头 <?php get_footer(); // 加载 WordPress 的页脚 ?> 代码删除
 
 按照教程顺序即可在web网页中实现而不是在 WordPress 中实现短视频去水印页面
 
