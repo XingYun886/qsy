@@ -38,7 +38,11 @@ JavaScript部分
 
 • 代码详情：
 
-![美丽风景](https://s2.loli.net/2025/01/08/Q3sTfN8EFKWCSzB.jpg)
+![html部分](https://s2.loli.net/2025/01/08/Q3sTfN8EFKWCSzB.jpg)
+
+（```    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>聚合短视频去水印</title> ```）
 
 • HTML结构
 
@@ -84,7 +88,7 @@ JavaScript部分
 
 • 在请求成功（readyState为4且status为200）时，将后端返回的响应文本设置为id为result的的innerHTML，从而在页面上展示去水印的结果信息，让用户知晓操作的反馈情况。
 
-• 使用说明
+## 使用说明
 
 • 后端配合：需要有一个名为dump.php的后端脚本文件，该文件应部署在与该HTML文件相同的服务器环境下，并根据前端发送的action参数（download或remove_watermark）以及视频链接进行相应的处理。
 
@@ -92,7 +96,7 @@ JavaScript部分
 
 • 功能测试与优化：在部署到实际环境前，应进行充分的功能测试。在不同的浏览器（如Chrome、Firefox、Safari、Edge等）上访问该网页，尝试输入各种合法和非法的短视频链接，点击“下载视频”和“免费去水印”按钮，检查是否能正确执行相应操作并获得预期结果。
 
-在WordPress中实现短视频去水印页面
+# 在WordPress中实现短视频去水印页面
 
 WordPress新建页面并使用短视频去水印模板教程
 
@@ -116,6 +120,10 @@ WordPress新建页面并使用短视频去水印模板教程
 
 • 优化页面：根据测试结果和用户反馈，对页面进行优化。例如，如果发现页面加载速度较慢，可以考虑优化相关代码和文件（如压缩CSS和JavaScript文件、优化图片等）；如果存在兼容性问题，可针对不同浏览器和设备进行样式和功能的调整，以提升用户体验。
 
-API支持解析平台
+# 参与开发
+
+[@星云](https://github.com/XingYun886)[小楠](https://github.com/IOSXN)
+
+# API支持解析平台
 
 支持平台：抖音、快手、小红书、微博、微视、今日头条、西瓜视频、哔哩哔哩、秒拍、美拍、皮皮虾、皮皮搞笑、全民小视频、火山小视频、好看视频、看点视频、全民K歌、看点视频、看点快报、度小视、QQ看点、陌陌、唱吧、YY、小咖秀、糖豆、最左、配音秀、酷狗音乐、酷我音乐、看看视频、梨视频、网易云音乐、大众点评、虎牙视频、懂车帝、剪映、趣头条、美图秀秀、刷宝、迅雷、京东、淘宝、天猫、拼多多、微信公众号、火锅视频、轻视频、百度视频、QQ浏览器、uc浏览器、oppo浏览器、油果浏览器、新片场、万能钥匙WiFi、知乎、腾讯新闻、人民日报、开眼、微叭、微云、快看点、TikTok、youtube、twitter、VUE、vigo、ACfun、now等100多个短视频去水印和常用图集解析。
