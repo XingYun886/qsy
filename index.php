@@ -156,7 +156,7 @@ get_header();
         var link = document.getElementById('videoLink').value;
         
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/wp-content/themes/zibll/pages/qsy1.php?action=download&url=' + link, true);
+        xhr.open('GET', '/wp-content/themes/zibll/pages/dump.php?action=download&url=' + link, true);
         xhr.responseType = 'blob';
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
@@ -176,7 +176,7 @@ get_header();
         var link = document.getElementById('videoLink').value;
         
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/wp-content/themes/zibll/pages/qsy1.php?action=remove_watermark&url=' + link, true);
+        xhr.open('GET', '/wp-content/themes/zibll/pages/dump.php?action=remove_watermark&url=' + link, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 document.getElementById('result').innerHTML = xhr.responseText;
