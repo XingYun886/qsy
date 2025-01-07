@@ -1,14 +1,14 @@
-聚合短视频去水印
+# 聚合短视频去水印
 
-项目预览
+## 项目预览
 
-	●	WordPress
+[WordPress页面](https://www.pxxox.com/qsy)
 
-	●	Web URL
+[WEB网页页面](https://qsy.pxxox.cn/)
 
-项目简介
+## 项目简介
 
-本项目是一个基于WordPress的短视频去水印工具，旨在帮助用户轻松去除常见短视频平台（如抖音、快手、小红书、西瓜视频等100多个平台）上视频的水印，方便用户获取无水印的视频资源用于个人学习、研究等合法用途。
+本项目是一个基于*WordPress*的短视频去水印工具，旨在帮助用户轻松去除常见短视频平台（如抖音、快手、小红书、西瓜视频等100多个平台）上视频的水印，方便用户获取无水印的视频资源用于个人学习、研究等合法用途。
 
 功能特性
 
@@ -36,7 +36,24 @@ JavaScript部分
 
 • 代码概述：这是一个用于实现聚合短视频去水印功能的网页代码，通过前端界面与后端脚本的交互，帮助用户去除常见短视频平台视频中的水印，并提供下载去水印视频的功能。
 
-• 代码详情：聚合短视频去水印代码展示
+• 代码详情：
+
+（```html
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>聚合短视频去水印</title>
+    <style>
+	/* 原始css样式 */
+    </style>
+    </head>
+<body>
+	/* 原始代码 */
+</body>
+
+</html>```）
 
 • HTML结构
 
