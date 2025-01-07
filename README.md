@@ -40,17 +40,19 @@ JavaScript部分
 
 ![html部分](https://s2.loli.net/2025/01/08/Q3sTfN8EFKWCSzB.jpg)
 
-(```<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>聚合短视频去水印</title>
-    <body>
-       原始部分 
-    </body>
-    </html>)
-
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;聚合短视频去水印&lt;/title&gt;
+    &lt;style&gt;原始css样式&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;原始部分&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 • HTML结构
 
 • 部分
