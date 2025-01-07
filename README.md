@@ -34,7 +34,7 @@ Web URL  ：http://qsy.pxxox.cn
 
 代码修改：
 
-	<!DOCTYPE html>
+	<!DOCTYPE html><!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
